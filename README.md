@@ -19,10 +19,11 @@
 * **If an error occurs**, run `php artisan migrate:refresh --seed` to proceed
   migration and seed` after debug. This command calls down method in migration file to rollback operation
 
-## Install [Laravel Breeze](https://laravel.com/docs/9.x/starter-kits) to authentication system
+## Install [Laravel Breeze](https://laravel.com/docs/9.x/starter-kits) for the authentication system
 
 * `composer require laravel/breeze --dev`
 * `php artisan breeze:install`
 * `php artisan migrate`
 * `npm install`
 * `npm run dev`
+* Update [node](https://nodejs.org/en/download/) version if needed *(Ex:failed to load config from vite.config.js)*
