@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
@@ -19,9 +20,7 @@ Route::get('/', [PostController::class, 'index'])->name('posts.index');
 Route::middleware(['auth'])->group(function () {
     Route::resource('posts', PostController::class)->except('index');
 
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
 });
 

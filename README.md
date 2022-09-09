@@ -33,3 +33,6 @@
 ### Image treatment
 * Change **FILESYSTEM_DISK=public** in .env file
 * `php artisan storage:link` to link storage folder in root to public/storage folder. A storage folder is created in public folder to as reflection of root's storage folder
+
+### Debug Tips
+* Error: *Invalid route action: [App\Http\Controllers\DashboardController].*, solution: Declare **Route::get('/dashboard', [DashboardController::class, 'index'])** instead of *Route::get('/dashboard'), DashboardController::class, 'index')* 
