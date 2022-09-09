@@ -6,6 +6,7 @@ use App\Http\Requests\StorePostRequest;
 use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 
 class PostController extends Controller
 {
@@ -71,6 +72,10 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
+        if (!Gate::allows('update-post', $post)) {
+            abort(403);
+        }
+
         $categories = Category::all();
         return view('post.edit', compact('post', 'categories'));
     }
