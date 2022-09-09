@@ -28,3 +28,7 @@
 * `npm install`
 * `npm run dev`
 * Update [node](https://nodejs.org/en/download/) version if needed *(Ex:failed to load config from vite.config.js)*
+
+### Image treatment
+* Change **FILESYSTEM_DISK=public** in .env file
+* `php artisan storage:link` to link storage folder in root to public/storage folder. A storage folder is created in public folder to as reflection of root's storage folder
