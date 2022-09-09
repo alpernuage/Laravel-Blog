@@ -17,16 +17,32 @@ class StorePostRequest extends FormRequest
     }
 
     /**
+     * This method is called before validation.
+     * @return void
+     */
+    protected function prepareForValidation()
+    {
+        if ($this->image == null) {
+            $this->request->remove('image');
+        }
+    }
+
+    /**
      * Get the validation rules that apply to the request.
      *
      * @return array<string, mixed>
      */
     public function rules()
     {
+        if (request()->routeIs('posts.store')) {
+            $imageRule = 'image|required';
+        } elseif (request()->routeIs('posts.update')) {
+            $imageRule = 'image|sometimes';
+        }
         return [
             'title' => 'required',
             'content' => 'required',
-            'image' => 'image|required',
+            'image' => $imageRule,
             'category' => 'required',
         ];
     }
