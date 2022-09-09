@@ -13,6 +13,20 @@ class Post extends Model
     protected $guarded = [];
 
     /**
+     * When a post is created, it will be bound to his parents(user and category)
+     * @return void
+     */
+    public static function boot()
+    {
+        parent::boot();
+
+        self::creating(function ($post) {
+            $post->user()->associate(auth()->user()->id);
+            $post->category()->associate(request()->category);
+        });
+    }
+
+    /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function user()

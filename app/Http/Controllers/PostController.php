@@ -17,7 +17,7 @@ class PostController extends Controller
     public function index()
     {
         /** with method allow to "Eagerload relation", get relation one time. Without "with" each time a request is needed */
-        $posts = Post::with('category', 'user')->get();
+        $posts = Post::with('category', 'user')->latest()->get();
         return view('post.index', compact('posts'));
     }
 
@@ -40,7 +40,16 @@ class PostController extends Controller
      */
     public function store(StorePostRequest $request)
     {
-        //
+        $imageName = $request->image->store('posts');
+
+        Post::create([
+            'title' => $request->title,
+            'content' => $request->content,
+            'image' => $imageName,
+        ]);
+
+        /** with(): Create success session to show result message */
+        return redirect()->route('dashboard')->with('success', 'Votre post a été créé');
     }
 
     /**
