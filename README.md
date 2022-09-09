@@ -42,4 +42,49 @@
   /dashboard', [DashboardController::class, 'index'])** instead of *Route::get('/dashboard'), DashboardController::
   class, 'index')*
 * If there is no href content you have to put `<a href="#"`. If your href attribute is empty like this `<a href=""`  
-  **onclick="event.preventDefault** won't work to prevent previous action 
+  **onclick="event.preventDefault** won't work to prevent previous action
+
+## Page visuals
+
+Login
+
+[//]: # (![Login!]&#40;public/pages/Login.png&#41;)
+![Login!](https://user-images.githubusercontent.com/50120472/189345943-bfae0db0-1883-41d1-9c26-334f863b376c.png)
+
+Register
+
+[//]: # (![Register!]&#40;public/pages/Register.png&#41;)
+![Register!](https://user-images.githubusercontent.com/50120472/189345949-09de1aa6-3fc9-472e-bde6-9bb02df20ad0.png)
+
+Posts
+
+[//]: # (![Posts!]&#40;public/pages/Posts.png&#41;)
+![Posts!](https://user-images.githubusercontent.com/50120472/189345948-1c8c10f2-a475-4afc-9e36-e79ee36d75fe.png)
+
+Actions
+
+[//]: # (![Actions!]&#40;public/pages/Actions.png&#41;)
+![Actions!](https://user-images.githubusercontent.com/50120472/189345499-8e35a918-4a22-4252-be6e-f29183cfd10e.png)
+
+Create
+
+[//]: # (![Create!]&#40;public/pages/Create.png&#41;)
+![Create!](https://user-images.githubusercontent.com/50120472/189345932-cdfd1cf0-dba1-496d-bd9b-6ca5cd26921a.png)
+
+Edit
+
+[//]: # (![Edit!]&#40;public/pages/Edit.png&#41;)
+![Edit!](https://user-images.githubusercontent.com/50120472/189345940-d50a155c-25c1-46a0-859b-1bc0076539a2.png)
+
+Delete
+
+[//]: # (![Delete!]&#40;public/pages/Delete.png&#41;  )
+![Delete!](https://user-images.githubusercontent.com/50120472/189346816-e3637692-8ec8-4a3a-b577-edfe48d18cff.png)
+
+#### image links are got from GitHub Issues page:
+
+* Click on Issues tab in a GitHub repository
+* Click on "New issue"
+* Click on "Submit new issue"
+* Drag and drop images into text area
+* Get url of each image (between parenthesis)
