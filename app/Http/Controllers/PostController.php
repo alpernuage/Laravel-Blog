@@ -84,7 +84,21 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        //
+        $arrayUpdate = [
+            'title' => $request->title,
+            'content' => $request->content
+        ];
+
+        if ($request->image != null) {
+            $imageName = $request->image->store('posts');
+
+            $arrayUpdate = array_merge($arrayUpdate, ['image' => $imageName]);
+        }
+
+        $post->update($arrayUpdate);
+
+        return redirect()->route('dashboard')->with('success', 'Votre post a été modifié');
+
     }
 
     /**
