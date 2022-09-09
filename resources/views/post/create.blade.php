@@ -6,7 +6,17 @@
     </x-slot>
 
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+
+        <div class="my-5">
+            @foreach($errors->all() as $error)
+                <span class="block text-red-500">{{ $error }}</span>
+            @endforeach
+        </div>
+
         <form action="{{ route('posts.store') }}" method="post" enctype="multipart/form-data" class="mt-10">
+
+            @csrf
+
             <x-input-label for="title" value="Titre du post"/>
             <x-text-input id="title" name="title"/>
 

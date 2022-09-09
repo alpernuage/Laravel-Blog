@@ -10,7 +10,7 @@
 6. php artisan serve
 7. Go to link localhost:8000
 
-## Terminal Commands to start the project
+## Terminal Commands to run the project
 
 * `php artisan make:model Post -a` to create all files dependent to Post model  
   *(Model, Factory, Migration, Seeder, Request, Controller, Policy)*
@@ -19,6 +19,7 @@
 * `php artisan migrate --seed` to proceed migration and seed.
 * **If an error occurs**, run `php artisan migrate:refresh --seed` to proceed
   migration and seed` after debug. This command calls down method in migration file to rollback operation
+* `php artisan make:request StorePostRequest` to create validation file for store method
 
 ## Install [Laravel Breeze](https://laravel.com/docs/9.x/starter-kits) for the authentication system
 
