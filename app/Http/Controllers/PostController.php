@@ -114,6 +114,13 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        //
+        /** !Gate::allows == Gate::denies */
+        if (Gate::denies('destroy-post', $post)) {
+            abort(403);
+        }
+
+        $post->delete();
+
+        return redirect()->route('dashboard')->with('success', 'Votre post a été supprimé');
     }
 }

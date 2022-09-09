@@ -31,8 +31,15 @@
 * Update [node](https://nodejs.org/en/download/) version if needed *(Ex:failed to load config from vite.config.js)*
 
 ### Image treatment
+
 * Change **FILESYSTEM_DISK=public** in .env file
-* `php artisan storage:link` to link storage folder in root to public/storage folder. A storage folder is created in public folder to as reflection of root's storage folder
+* `php artisan storage:link` to link storage folder in root to public/storage folder. A storage folder is created in
+  public folder to as reflection of root's storage folder
 
 ### Debug Tips
-* Error: *Invalid route action: [App\Http\Controllers\DashboardController].*, solution: Declare **Route::get('/dashboard', [DashboardController::class, 'index'])** instead of *Route::get('/dashboard'), DashboardController::class, 'index')* 
+
+* Error: *Invalid route action: [App\Http\Controllers\DashboardController].*, solution: Declare **Route::get('
+  /dashboard', [DashboardController::class, 'index'])** instead of *Route::get('/dashboard'), DashboardController::
+  class, 'index')*
+* If there is no href content you have to put `<a href="#"`. If your href attribute is empty like this `<a href=""`  
+  **onclick="event.preventDefault** won't work to prevent previous action 
