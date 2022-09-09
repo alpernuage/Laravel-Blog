@@ -14,7 +14,9 @@ class PostController extends Controller
      */
     public function index()
     {
-        return view('post.index');
+        /** with method allow to "Eagerload relation", get relation one time. Without "with" each time a request is needed */
+        $posts = Post::with('category', 'user')->get();
+        return view('post.index', compact('posts'));
     }
 
     /**

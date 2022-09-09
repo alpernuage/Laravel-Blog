@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class Post extends Model
 {
@@ -25,5 +26,16 @@ class Post extends Model
     public function category()
     {
         return $this->belongsTo(Category::class);
+    }
+
+    /**
+     * First letter of each word in title attribute is majuscule
+     *
+     * @param $attribute
+     * @return string
+     */
+    public function getTitleAttribute($attribute)
+    {
+        return Str::title($attribute);
     }
 }
