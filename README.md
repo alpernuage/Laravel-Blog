@@ -12,7 +12,8 @@
 
 ## Terminal Commands to start the project
 
-* `php artisan make:model Post -a` to create all files dependent to Post model
+* `php artisan make:model Post -a` to create all files dependent to Post model  
+  *(Model, Factory, Migration, Seeder, Request, Controller, Policy)*
 * `php artisan make:model Category -m` to create Category model and migration file
 * `php artisan make:factory CategoryFactory --model=Category` to create factory of Category model
 * `php artisan migrate --seed` to proceed migration and seed.
